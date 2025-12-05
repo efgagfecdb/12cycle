@@ -19,7 +19,7 @@ The **12cycle Coin (12C)** serves as evidence of participation in the cultural e
 
 | Section | Description |
 | :--- | :--- |
-| [**Ecosystem**](ecosystem/mechanism.md) | Proof of Culture mechanism. |
+| [**Ecosystem**](ecosystem/PoC.md) | Proof of Culture mechanism. |
 | [**Architecture**](ecosystem/architecture.md) | Technical infrastructure. |
 | [**Tokenomics**](tokenomics/allocation.md) | Token allocation and utility. |
 | [**Sustainability**](tokenomics/sustainability.md) | Deflationary models. |

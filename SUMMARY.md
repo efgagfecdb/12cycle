@@ -3,7 +3,7 @@
 * [Welcome to 12cycle](README.md)
 
 ## 🌏 The Ecosystem
-* [Proof of Culture](ecosystem/mechanism.md)
+* [Proof of Culture](ecosystem/PoC.md)
 * [Tech Architecture](ecosystem/architecture.md)
 
 ## 💎 Token Economy
