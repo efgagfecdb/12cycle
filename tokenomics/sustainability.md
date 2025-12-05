@@ -20,127 +20,127 @@ The project generates revenue through **In-Game Purchases**, **Media Contents**,
 
 ---
 
-## 📉 인플레이션/디플레이션 전략 (Inflation & Deflation Strategy)
+## 📉 Inflation & Deflation Strategy
 
-### 토큰 발행률 공식 (Token Emission Formula)
+### Token Emission Formula
 
-12cycle은 동적 발행률 조정 메커니즘을 통해 경제 안정성을 유지합니다.
+12cycle maintains economic stability through a dynamic emission rate adjustment mechanism.
 
 $$
 F_{emit} = R_{base} \\times (1 - B_{rate}) \\times M_{activity}
 $$
 
-**변수 설명:**
-- $F_{emit}$: 실제 발행량 (Actual Emission)
-- $R_{base}$: 기본 보상률 (Base Reward Rate)
-- $B_{rate}$: 소각률 (Burn Rate)
-- $M_{activity}$: 활동 지수 배율 (Activity Multiplier, 0.5 ~ 2.0)
+**Variable Definitions:**
+- $F_{emit}$: Actual Emission
+- $R_{base}$: Base Reward Rate
+- $B_{rate}$: Burn Rate
+- $M_{activity}$: Activity Multiplier (0.5 ~ 2.0)
 
-### 발행 스케줄 (Emission Schedule)
+### Emission Schedule
 
-**생태계 보상 풀 (40%, 4,800,000,000 12C)**의 연간 발행 계획:
+**Ecosystem Rewards Pool (40%, 4,800,000,000 12C)** annual emission plan:
 
-| 연도 | 발행량 (12C) | 누적 발행률 | 주요 활용 |
+| Year | Emission (12C) | Cumulative % | Primary Use |
 |------|-------------|-----------|----------|
-| Year 1 | 960,000,000 | 20% | 초기 사용자 유치 및 PoC 보상 |
-| Year 2 | 720,000,000 | 35% | 게임 런칭 및 확장 |
-| Year 3 | 576,000,000 | 47% | 글로벌 진출 |
-| Year 4 | 480,000,000 | 57% | 메타버스 통합 |
-| Year 5+ | 384,000,000/년 | 감소율 유지 | 지속 가능 보상 |
+| Year 1 | 960,000,000 | 20% | Initial user acquisition & PoC rewards |
+| Year 2 | 720,000,000 | 35% | Game launch and expansion |
+| Year 3 | 576,000,000 | 47% | Global expansion |
+| Year 4 | 480,000,000 | 57% | Metaverse integration |
+| Year 5+ | 384,000,000/year | Declining rate | Sustainable rewards |
 
-**발행률 감소 곡선:**
+**Emission Reduction Curve:**
 
 ```
-Year 1: 100% 기준
+Year 1: 100% baseline
 Year 2: -25% (0.75x)
 Year 3: -20% (0.80x of Year 2)
 Year 4: -17% (0.83x of Year 3)
-Year 5+: -20% 연간 감소 (Half-life: 5년)
+Year 5+: -20% annual reduction (Half-life: 5 years)
 ```
 
-### 소각 메커니즘 상세 (Burn Mechanism Details)
+### Burn Mechanism Details
 
-#### 자동 소각 트리거 (Automatic Burn Triggers)
+#### Automatic Burn Triggers
 
-**1. 거래 수수료 소각**
-
-```
-NFT 마켓플레이스 거래액의 2.5%
-→ 1.25% 즉시 소각
-→ 1.25% DAO Treasury
-
-월 거래액 $1M 가정 시:
-연간 소각량: $150,000 상당 12C
-```
-
-**2. IP 라이선싱 소각**
+**1. Transaction Fee Burns**
 
 ```
-기업 IP 사용료 100% 12C 결제
-→ 전액 소각 (Permanent Burn)
+2.5% of NFT marketplace transaction volume
+→ 1.25% immediate burn
+→ 1.25% to DAO Treasury
 
-예상 라이선싱:
-- 게임사 협업: 연 $500K-2M
-- 굿즈 제조사: 연 $200K-500K
-- 미디어 제휴: 연 $100K-300K
+Assuming $1M monthly volume:
+Annual burn: $150,000 equivalent in 12C
 ```
 
-**3. 프리미엄 기능 소각**
+**2. IP Licensing Burns**
 
-| 기능 | 소각 비율 | 예상 연간 소각량 |
+```
+100% corporate IP usage fees paid in 12C
+→ Complete permanent burn
+
+Projected licensing:
+- Gaming partnerships: $500K-2M annually
+- Merchandise manufacturers: $200K-500K annually
+- Media collaborations: $100K-300K annually
+```
+
+**3. Premium Feature Burns**
+
+| Feature | Burn Rate | Estimated Annual Burn |
 |------|----------|----------------|
-| 가챠/랜덤박스 | 100% | 300M 12C |
-| 프리미엄 웹툰 해금 | 70% | 150M 12C |
-| 네임 변경 | 100% | 50M 12C |
-| 특별 스킨 구매 | 50% | 100M 12C |
+| Gacha/Random Box | 100% | 300M 12C |
+| Premium Webtoon Unlock | 70% | 150M 12C |
+| Name Change | 100% | 50M 12C |
+| Special Skin Purchase | 50% | 100M 12C |
 
-#### 소각 가속 조건 (Burn Acceleration)
+#### Burn Acceleration Conditions
 
-생태계 건강도에 따라 소각률이 자동 조정됩니다:
+Burn rate automatically adjusts based on ecosystem health:
 
 ```python
-if circulation_ratio > 0.7:  # 유통량이 총 공급의 70% 초과 시
+if circulation_ratio > 0.7:  # If circulation exceeds 70% of total supply
     burn_rate = base_burn_rate * 1.5
-elif circulation_ratio < 0.4:  # 40% 미만 시
+elif circulation_ratio < 0.4:  # If below 40%
     burn_rate = base_burn_rate * 0.7
 else:
     burn_rate = base_burn_rate
 ```
 
-### 디플레이션 임계점 (Deflationary Threshold)
+### Deflationary Threshold
 
-**목표:** Year 3 부터 순 디플레이션 달성
+**Target:** Achieve net deflation from Year 3 onwards
 
 $$
 \\text{Net Supply Change} = F_{emit} - F_{burn}
 $$
 
-**시뮬레이션 결과:**
+**Simulation Results:**
 
-| 연도 | 발행량 | 소각량 (예상) | 순 변화 |
+| Year | Emission | Burn (Projected) | Net Change |
 |------|--------|--------------|---------|
-| Year 1 | 960M | 200M | +760M (순증가) |
-| Year 2 | 720M | 400M | +320M (순증가) |
-| Year 3 | 576M | 600M | **-24M (순감소)** ✅ |
-| Year 4 | 480M | 800M | **-320M (순감소)** ✅ |
-| Year 5 | 384M | 1,000M | **-616M (순감소)** ✅ |
+| Year 1 | 960M | 200M | +760M (Net Increase) |
+| Year 2 | 720M | 400M | +320M (Net Increase) |
+| Year 3 | 576M | 600M | **-24M (Net Decrease)** ✅ |
+| Year 4 | 480M | 800M | **-320M (Net Decrease)** ✅ |
+| Year 5 | 384M | 1,000M | **-616M (Net Decrease)** ✅ |
 
 ---
 
-## 📊 베스팅 스케줄 (Vesting Schedule)
+## 📊 Vesting Schedule
 
-### 팀 배분 (10%, 1,200,000,000 12C)
+### Team Allocation (10%, 1,200,000,000 12C)
 
-**락업 조건:**
-- TGE: 0% (완전 잠금)
-- 6개월 Cliff: 보상 없음
-- 36개월 선형 베스팅
+**Lock-up Terms:**
+- TGE: 0% (Fully locked)
+- 6-month Cliff: No rewards
+- 36-month Linear Vesting
 
 ```
 Month 0-6: 0 12C (Cliff Period)
-Month 7: 33,333,333 12C (첫 해제)
-Month 8-42: 월 33,333,333 12C (선형 해제)
-Total: 36개월 분산 지급
+Month 7: 33,333,333 12C (First unlock)
+Month 8-42: 33,333,333 12C monthly (Linear unlock)
+Total: 36-month distribution
 ```
 
 **베스팅 그래프:**
@@ -154,133 +154,133 @@ Total: 36개월 분산 지급
         │          ██████
         │    ██████
         │____
-        0    6    12   18   24   30   36   42 (개월)
+        0    6    12   18   24   30   36   42 (months)
 ```
 
-### 어드바이저 배분 (팀 풀에서 분리, 200,000,000 12C)
+### Advisor Allocation (Separate from Team Pool, 200,000,000 12C)
 
-**락업 조건:**
-- TGE: 10% (즉시 해제, 조기 기여 보상)
-- 12개월 선형 베스팅
+**Lock-up Terms:**
+- TGE: 10% (Immediate unlock as early contribution reward)
+- 12-month Linear Vesting
 
 ```
 TGE: 20,000,000 12C (10%)
-Month 1-12: 월 15,000,000 12C (90% 분산)
+Month 1-12: 15,000,000 12C monthly (90% distribution)
 ```
 
-### 프라이빗/퍼블릭 세일 (5%, 600,000,000 12C)
+### Private/Public Sale (5%, 600,000,000 12C)
 
-#### 프라이빗 세일 (3%, 360,000,000 12C)
+#### Private Sale (3%, 360,000,000 12C)
 
-**조건:**
-- 가격: $0.005/12C
+**Terms:**
+- Price: $0.005/12C
 - TGE: 5% (18,000,000 12C)
-- 6개월 Cliff
-- 18개월 선형 베스팅
+- 6-month Cliff
+- 18-month Linear Vesting
 
-| 기간 | 해제량 | 누적 비율 |
+| Period | Unlock Amount | Cumulative % |
 |------|--------|----------|
 | TGE | 18M | 5% |
-| Month 7-24 | 월 19M | 95% 분산 |
+| Month 7-24 | 19M monthly | 95% distribution |
 
-#### 퍼블릭 세일 (2%, 240,000,000 12C)
+#### Public Sale (2%, 240,000,000 12C)
 
-**조건:**
-- 가격: $0.008/12C
+**Terms:**
+- Price: $0.008/12C
 - TGE: 10% (24,000,000 12C)
-- 3개월 Cliff
-- 9개월 선형 베스팅
+- 3-month Cliff
+- 9-month Linear Vesting
 
-| 기간 | 해제량 | 누적 비율 |
+| Period | Unlock Amount | Cumulative % |
 |------|--------|----------|
 | TGE | 24M | 10% |
-| Month 4-12 | 월 24M | 90% 분산 |
+| Month 4-12 | 24M monthly | 90% distribution |
 
-### 생태계 보상 (40%, 4,800,000,000 12C)
+### Ecosystem Rewards (40%, 4,800,000,000 12C)
 
-**배분 방식:**
-- 스마트 컨트랙트 자동 관리
-- PoC 활동 증명에 따라 실시간 지급
-- 연간 발행 상한선 적용 (위 발행 스케줄 참조)
+**Distribution Method:**
+- Automated smart contract management
+- Real-time distribution based on PoC activity verification
+- Annual emission cap applied (refer to emission schedule above)
 
-### 개발 펀드 (20%, 2,400,000,000 12C)
+### Development Fund (20%, 2,400,000,000 12C)
 
-**락업 조건:**
-- DAO 멀티시그 지갑 관리
-- 분기별 사용 계획 커뮤니티 공개
-- 사용 후 투명한 리포트 제출
+**Lock-up Terms:**
+- Managed by DAO multi-sig wallet
+- Quarterly usage plans disclosed to community
+- Transparent post-usage reports submitted
 
-| 분기 | 사용 가능액 | 주요 용도 |
+| Quarter | Available Amount | Primary Use |
 |------|-----------|----------|
-| Q1-Q4 | 분기당 100M | 플랫폼 개발, 인프라 |
-| Year 2 | 분기당 120M | IP 확장, 신규 콘텐츠 |
-| Year 3+ | 분기당 80M | 유지보수, 업그레이드 |
+| Q1-Q4 | 100M per quarter | Platform development, infrastructure |
+| Year 2 | 120M per quarter | IP expansion, new content |
+| Year 3+ | 80M per quarter | Maintenance, upgrades |
 
-### 마케팅 펀드 (15%, 1,800,000,000 12C)
+### Marketing Fund (15%, 1,800,000,000 12C)
 
-**배분 전략:**
-- Year 1: 40% (720M) - 초기 인지도 구축
-- Year 2: 30% (540M) - 글로벌 확장
-- Year 3+: 30% (540M) - 지속적 브랜딩
+**Distribution Strategy:**
+- Year 1: 40% (720M) - Initial brand awareness
+- Year 2: 30% (540M) - Global expansion
+- Year 3+: 30% (540M) - Sustained branding
 
-### 준비금 (10%, 1,200,000,000 12C)
+### Reserve Fund (10%, 1,200,000,000 12C)
 
-**용도:**
-- 긴급 유동성 공급
-- 거래소 마켓메이킹
-- 예상치 못한 시장 변동성 대응
+**Purpose:**
+- Emergency liquidity provision
+- Exchange market making
+- Response to unexpected market volatility
 
-**락업:**
-- DAO 투표 없이는 사용 불가
-- 최소 5/7 멀티시그 승인 필요
+**Lock-up:**
+- Cannot be used without DAO vote
+- Requires minimum 5/7 multi-sig approval
 
 ---
 
-## 📈 토큰 가격 안정화 메커니즘 (Price Stability Mechanism)
+## 📈 Price Stability Mechanism
 
-### 자동 시장 조성자 (AMM) 전략
+### Automated Market Maker (AMM) Strategy
 
-**유동성 풀 관리:**
-
-```
-초기 유동성: $500K (12C/ETH 페어)
-→ 프로토콜 수수료 0.3%
-→ 수수료 100% 재투자로 유동성 증대
-
-목표 유동성: Year 2 $5M
-```
-
-### 가격 하락 방어선 (Price Floor Mechanisms)
-
-1. **자동 바이백 프로그램**
+**Liquidity Pool Management:**
 
 ```
-조건: 7일 이동평균이 출시가 대비 -50% 이하
-실행: Treasury에서 주간 최대 $50K 매수
-소각: 매수한 물량 100% 즉시 소각
+Initial Liquidity: $500K (12C/ETH pair)
+→ Protocol fee 0.3%
+→ 100% fee reinvestment for liquidity growth
+
+Target Liquidity: Year 2 $5M
 ```
 
-2. **긴급 스테이킹 부스트**
+### Price Floor Mechanisms
+
+1. **Automated Buyback Program**
 
 ```
-조건: 가격 30일 최저치 갱신
-실행: 모든 스테이킹 APY 2배 증가 (1주간)
-효과: 유통량 감소로 가격 안정화
+Condition: 7-day moving average drops 50% below launch price
+Execution: Weekly maximum $50K purchases from Treasury
+Burn: 100% immediate burn of purchased tokens
 ```
 
-### 토큰 경제 모니터링 지표
+2. **Emergency Staking Boost**
 
-**핵심 KPI:**
+```
+Condition: Price hits 30-day low
+Execution: All staking APY doubled for 1 week
+Effect: Reduced circulation for price stabilization
+```
 
-| 지표 | 목표치 | 경고선 |
+### Token Economics Monitoring Metrics
+
+**Core KPIs:**
+
+| Metric | Target | Warning Level |
 |------|--------|--------|
-| 일일 거래량 | > $100K | < $20K |
-| 홀더 수 | 분기 +20% | 감소 추세 |
-| 스테이킹 비율 | > 30% | < 15% |
-| 소각률 | 연 5%+ | < 2% |
+| Daily Trading Volume | > $100K | < $20K |
+| Holder Count | Quarterly +20% | Declining trend |
+| Staking Ratio | > 30% | < 15% |
+| Burn Rate | Annual 5%+ | < 2% |
 
-**월간 투명성 리포트:**
-- 발행량 및 소각량 공개
-- 주요 지갑 움직임 분석
-- 생태계 활동 지표
-- 다음 달 예상 공급 변화
+**Monthly Transparency Reports:**
+- Emission and burn volumes disclosed
+- Major wallet movement analysis
+- Ecosystem activity metrics
+- Next month's projected supply changes

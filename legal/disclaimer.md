@@ -1,105 +1,111 @@
-# 법적 고지 (Legal Disclaimer)
+# Legal Disclaimer
 
-## ⚠️ 중요 공지 (Important Notice)
+## ⚠️ Important Notice
 
-이 문서는 법률 자문을 받아 작성되어야 합니다. 아래 항목은 표준 백서에서 다루어야 할 법적 고지 사항의 골격입니다.
-
----
-
-## 📜 면책 조항 (Disclaimer)
-
-### 1. 일반 면책 사항
-
-*[이 섹션에는 백서가 투자 자문이 아니며, 정보 제공 목적임을 명시]*
-
-### 2. 관할권 (Jurisdiction)
-
-*[프로젝트의 법적 관할권 및 각 국가별 규제 준수 사항 명시]*
-
-### 3. 토큰의 법적 성격 (Token Classification)
-
-*[12C 토큰이 증권이 아닌 유틸리티 토큰임을 명시하고, 각 관할권의 증권법 적용 여부 검토]*
-
-### 4. 제한 지역 (Restricted Territories)
-
-*[미국, 중국 등 특정 국가의 투자자에 대한 제한 사항 명시]*
+This document should be reviewed by legal counsel. The sections below provide the framework for legal disclosures that should be addressed in a standard whitepaper.
 
 ---
 
-## 🛡️ 투자자 보호 (Investor Protection)
+## 📜 Disclaimer
 
-### 1. KYC/AML 정책
+### 1. General Disclaimer
 
-*[Know Your Customer 및 Anti-Money Laundering 정책 개요]*
+This whitepaper is provided for informational purposes only and does not constitute financial, investment, legal, or tax advice. The information contained herein does not constitute an offer to sell or a solicitation to purchase any securities, tokens, or investment products in any jurisdiction. Potential participants should conduct their own due diligence and consult with professional advisors before making any investment decisions.
 
-### 2. 데이터 보호
+### 2. Jurisdiction
 
-*[GDPR 및 개인정보 보호법 준수 사항]*
+The 12cycle project operates in compliance with applicable laws and regulations in relevant jurisdictions. However, the regulatory landscape for blockchain technology and digital assets varies significantly across different countries and is subject to change. Participants must ensure that their participation complies with the laws of their jurisdiction.
 
----
+### 3. Token Classification
 
-## ⚖️ 법적 책임 제한 (Limitation of Liability)
+The 12C token is a utility token designed to facilitate access to and interaction within the 12cycle ecosystem. It is not intended to be a security, investment contract, or any form of financial instrument. The 12C token does not represent any ownership interest, equity, profit-sharing rights, or governance rights in any entity, except as explicitly provided through the DAO mechanism.
 
-### 1. 프로젝트 리스크
+### 4. Restricted Territories
 
-*[프로젝트 실패 가능성 및 투자 손실 위험 명시]*
+Participation in the 12cycle ecosystem may be restricted or prohibited in certain jurisdictions, including but not limited to:
+- United States of America and its territories
+- People's Republic of China
+- Jurisdictions where participation would violate applicable laws or regulations
+- Sanctioned countries or territories as designated by international regulatory bodies
 
-### 2. 기술적 리스크
-
-*[스마트 컨트랙트 버그, 해킹 등의 위험 고지]*
-
-### 3. 시장 리스크
-
-*[암호화폐 시장 변동성 및 유동성 위험 고지]*
+Residents of restricted territories are prohibited from purchasing, holding, or using 12C tokens.
 
 ---
 
-## 📄 지적 재산권 (Intellectual Property)
+## 🛡️ Investor Protection
 
-### 1. 상표권 (Trademark)
+### 1. KYC/AML Policy
 
-*[12cycle 및 12 Zodiac 캐릭터의 상표권 등록 현황]*
+12cycle implements rigorous Know Your Customer (KYC) and Anti-Money Laundering (AML) procedures in compliance with international standards and applicable regulations. All participants may be required to undergo identity verification processes before accessing certain features or participating in token sales.
 
-### 2. 저작권 (Copyright)
+### 2. Data Protection
 
-*[백서, 코드, 디자인 등의 저작권 귀속]*
-
-### 3. 라이선스 (Licensing)
-
-*[오픈소스 라이선스 및 IP 사용 조건]*
+12cycle is committed to protecting user data in accordance with applicable data protection laws, including the General Data Protection Regulation (GDPR) and other relevant privacy legislation. Personal data collected will be processed, stored, and protected in accordance with our Privacy Policy.
 
 ---
 
-## 🔒 규제 준수 (Regulatory Compliance)
+## ⚖️ Limitation of Liability
 
-### 1. 증권법 (Securities Law)
+### 1. Project Risks
 
-*[Howey Test 적용 결과 및 SEC/각국 금융당국 입장]*
+The 12cycle project involves significant risks, including but not limited to the potential for complete loss of invested capital. There is no guarantee that the project will achieve its stated objectives or that the 12C token will maintain any particular value. Participants acknowledge and accept all risks associated with participation.
 
-### 2. 자금세탁방지법 (AML)
+### 2. Technical Risks
 
-*[FATF 권고사항 준수 계획]*
+Smart contracts and blockchain technology involve inherent risks, including potential bugs, vulnerabilities, and security breaches. While smart contracts will undergo professional audits, no audit can guarantee complete security. Participants acknowledge the technical risks inherent in blockchain technology.
 
-### 3. 세법 (Tax Law)
+### 3. Market Risks
 
-*[토큰 거래 및 보상에 대한 세금 처리 안내]*
-
----
-
-## 📞 법적 문의 (Legal Inquiries)
-
-법적 문의 사항이 있으신 경우:
-
-**이메일:** legal@12cycle.io  
-**주소:** [법인 등록 주소]  
-**담당:** [법무 담당자 이름]
+Digital assets are subject to extreme market volatility and may experience significant price fluctuations. The value of 12C tokens may decrease substantially or become worthless. Market conditions, regulatory changes, and other factors beyond the project's control may adversely affect token value.
 
 ---
 
-**최종 업데이트:** [날짜]  
-**버전:** 1.0  
-**언어:** 한국어 / English
+## 📄 Intellectual Property
+
+### 1. Trademark
+
+The "12cycle" name, "12 Zodiac" characters, and associated logos and branding elements are trademarks owned by the project. Unauthorized use of these trademarks is prohibited and may result in legal action.
+
+### 2. Copyright
+
+All content in this whitepaper, including but not limited to text, graphics, designs, and code, is protected by copyright. Copyright ownership remains with the 12cycle project and its creators unless otherwise specified.
+
+### 3. Licensing
+
+Certain components of the 12cycle project may be released under open-source licenses. Specific licensing terms will be provided with the respective components. Use of intellectual property is subject to license terms and conditions.
 
 ---
 
-> **⚠️ 이 문서는 법률 전문가의 검토를 받아야 하며, 실제 배포 전에 관할권의 규제 요구사항에 맞게 수정되어야 합니다.**
+## 🔒 Regulatory Compliance
+
+### 1. Securities Law
+
+The 12C token is intended to be a utility token and not a security under applicable securities laws. However, regulatory treatment may vary by jurisdiction. The project has assessed the token under various frameworks, including the Howey Test, and believes the 12C token does not constitute a security. This determination does not constitute legal advice, and participants should seek their own legal counsel.
+
+### 2. Anti-Money Laundering (AML)
+
+12cycle implements AML procedures in accordance with Financial Action Task Force (FATF) recommendations and applicable laws. The project reserves the right to reject or terminate participation from any individual or entity that fails to comply with AML requirements.
+
+### 3. Tax Law
+
+Participants are solely responsible for determining and satisfying all tax obligations that may arise from acquiring, holding, trading, or using 12C tokens. Tax treatment varies by jurisdiction, and participants should consult with qualified tax professionals regarding their specific circumstances.
+
+---
+
+## 📞 Legal Inquiries
+
+For legal inquiries, please contact:
+
+**Email:** legal@12cycle.io  
+**Address:** [Legal Entity Registered Address]  
+**Contact:** [Legal Department Contact Name]
+
+---
+
+**Last Updated:** [Date]  
+**Version:** 1.0  
+**Language:** English
+
+---
+
+> **⚠️ This document must be reviewed by qualified legal professionals and modified to meet the regulatory requirements of applicable jurisdictions before distribution.**

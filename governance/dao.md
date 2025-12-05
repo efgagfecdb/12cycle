@@ -20,22 +20,22 @@ A portion of the ecosystem revenue is deposited into the **Community Treasury**.
 
 ---
 
-## ⚖️ DAO 투표 메커니즘 상세 (DAO Voting Mechanism)
+## ⚖️ DAO Voting Mechanism Details
 
-### 투표권 가중치 기준 (Voting Weight Calculation)
+### Voting Weight Calculation
 
-**기본 원칙:** 1 12C = 1 Vote (스테이킹된 토큰만 계산)
+**Core Principle:** 1 12C = 1 Vote (only staked tokens count)
 
-**가중치 부스터 시스템:**
+**Weight Multiplier System:**
 
-| 조건 | 가중치 배율 | 설명 |
-|------|-----------|------|
+| Condition | Weight Multiplier | Description |
+|------|-----------|------|\n| **Standard Holding** | 1.0x | Base voting power |
 | **일반 보유** | 1.0x | 기본 투표권 |
-| **30일 스테이킹** | 1.2x | 단기 스테이커 |
-| **90일 스테이킹** | 1.5x | 중기 스테이커 |
-| **365일 스테이킹** | 2.0x | 장기 스테이커 |
-| **Genesis NFT 보유** | +0.3x | 초기 지지자 보너스 |
-| **PoC 레벨 10+** | +0.2x | 활동 기여자 |
+| **30-Day Staking** | 1.2x | Short-term staker |
+| **90-Day Staking** | 1.5x | Medium-term staker |
+| **365-Day Staking** | 2.0x | Long-term staker |
+| **Genesis NFT Holder** | +0.3x | Early supporter bonus |
+| **PoC Level 10+** | +0.2x | Active contributor |
 
 **투표권 계산 공식:**
 
@@ -43,100 +43,100 @@ $$
 V_{power} = T_{staked} \\times (1 + B_{duration} + B_{NFT} + B_{PoC})
 $$
 
-- $V_{power}$: 총 투표권
-- $T_{staked}$: 스테이킹된 토큰 양
-- $B_{duration}$: 스테이킹 기간 보너스 (0 ~ 1.0)
-- $B_{NFT}$: Genesis NFT 보너스 (0 or 0.3)
-- $B_{PoC}$: PoC 레벨 보너스 (0 ~ 0.2)
+- $V_{power}$: Total voting power
+- $T_{staked}$: Amount of staked tokens
+- $B_{duration}$: Staking duration bonus (0 ~ 1.0)
+- $B_{NFT}$: Genesis NFT bonus (0 or 0.3)
+- $B_{PoC}$: PoC level bonus (0 ~ 0.2)
 
-**예시:**
+**Example:**
 
 ```
-사용자 A:
-- 스테이킹: 1,000,000 12C (365일)
-- Genesis NFT: 보유
-- PoC 레벨: 15
+User A:
+- Staking: 1,000,000 12C (365 days)
+- Genesis NFT: Holding
+- PoC Level: 15
 
-투표권 = 1,000,000 × (1 + 1.0 + 0.3 + 0.2) = 2,500,000 Votes
+Voting Power = 1,000,000 × (1 + 1.0 + 0.3 + 0.2) = 2,500,000 Votes
 ```
 
-### 제안 유형 및 조건 (Proposal Types)
+### Proposal Types and Requirements
 
-#### 1. 일반 제안 (Standard Proposal)
+#### 1. Standard Proposal
 
-**제출 조건:**
-- 최소 보유: 120,000 12C (스테이킹 상태)
-- 제안 보증금: 10,000 12C (가결 시 반환, 부결 시 소각)
+**Submission Requirements:**
+- Minimum holding: 120,000 12C (staked)
+- Proposal deposit: 10,000 12C (returned if passed, burned if rejected)
 
-**적용 분야:**
-- 커뮤니티 이벤트 개최
-- 마케팅 캠페인 승인
-- 신규 파트너십 제안
+**Applicable Areas:**
+- Community event hosting
+- Marketing campaign approval
+- New partnership proposals
 
-**통과 조건:**
-- 정족수: 12%
-- 찬성률: 51%
+**Passage Conditions:**
+- Quorum: 12%
+- Approval rate: 51%
 
-#### 2. 중요 제안 (Major Proposal)
+#### 2. Major Proposal
 
-**제출 조건:**
-- 최소 보유: 500,000 12C
-- 제안 보증금: 50,000 12C
+**Submission Requirements:**
+- Minimum holding: 500,000 12C
+- Proposal deposit: 50,000 12C
 
-**적용 분야:**
-- 생태계 펀드 사용 (100K 이상)
-- 새로운 블록체인 확장
-- IP 라이선싱 계약 승인
+**Applicable Areas:**
+- Ecosystem fund usage (>$100K)
+- New blockchain expansion
+- IP licensing contract approval
 
-**통과 조건:**
-- 정족수: 20%
-- 찬성률: 66%
+**Passage Conditions:**
+- Quorum: 20%
+- Approval rate: 66%
 
-#### 3. 핵심 제안 (Critical Proposal)
+#### 3. Critical Proposal
 
-**제출 조건:**
-- 최소 보유: 1,200,000 12C (총 공급의 0.01%)
-- 제안 보증금: 100,000 12C
-- 5명 이상의 공동 제안자 필요
+**Submission Requirements:**
+- Minimum holding: 1,200,000 12C (0.01% of total supply)
+- Proposal deposit: 100,000 12C
+- Requires 5+ co-proposers
 
-**적용 분야:**
-- 스마트 컨트랙트 업그레이드
-- 토큰 이코노미 변경
-- 거버넌스 규칙 개정
+**Applicable Areas:**
+- Smart contract upgrades
+- Token economics changes
+- Governance rule amendments
 
-**통과 조건:**
-- 정족수: 30%
-- 찬성률: 75%
+**Passage Conditions:**
+- Quorum: 30%
+- Approval rate: 75%
 
-### 투표 프로세스 상세 (Voting Process)
+### Detailed Voting Process
 
 ```mermaid
 graph TD
-    A[제안 제출] --> B{보유량 검증}
-    B -->|통과| C[보증금 예치]
-    B -->|실패| Z[제안 거부]
-    C --> D[7일 토론 기간]
-    D --> E[5일 투표 기간]
-    E --> F{정족수 충족?}
-    F -->|예| G{찬성률 충족?}
-    F -->|아니오| H[제안 폐기]
-    G -->|예| I[제안 가결]
-    G -->|아니오| J[제안 부결]
-    I --> K[48시간 Timelock]
-    K --> L[자동 실행]
-    H --> M[보증금 50% 소각]
+    A[Submit Proposal] --> B{Verify Holdings}
+    B -->|Pass| C[Deposit Escrow]
+    B -->|Fail| Z[Proposal Rejected]
+    C --> D[7-Day Discussion Period]
+    D --> E[5-Day Voting Period]
+    E --> F{Quorum Met?}
+    F -->|Yes| G{Approval Rate Met?}
+    F -->|No| H[Proposal Discarded]
+    G -->|Yes| I[Proposal Passed]
+    G -->|No| J[Proposal Rejected]
+    I --> K[48-Hour Timelock]
+    K --> L[Auto-Execute]
+    H --> M[50% Deposit Burned]
     J --> M
 ```
 
-**기간 설정:**
+**Timeline:**
 
-| 단계 | 기간 | 설명 |
+| Stage | Duration | Description |
 |------|------|------|
-| **제안 검토** | 24시간 | 악의적 제안 필터링 |
-| **토론 기간** | 7일 | 커뮤니티 의견 수렴 |
-| **투표 기간** | 5일 | 실제 투표 진행 |
-| **Timelock** | 48시간 | 긴급 거부권 행사 가능 |
-| **실행** | 즉시 | 스마트 컨트랙트 자동 실행 |
+| **Proposal Review** | 24 hours | Filter malicious proposals |
+| **Discussion Period** | 7 days | Community feedback collection |
+| **Voting Period** | 5 days | Actual voting execution |
+| **Timelock** | 48 hours | Emergency veto window |
+| **Execution** | Immediate | Smart contract auto-execution |
 
 ### 최소 정족수 (Quorum Requirements)
 
@@ -233,76 +233,76 @@ Marketing Fund: 0x9abc...ijkl
 
 ---
 
-## 🔐 긴급 거버넌스 메커니즘 (Emergency Governance)
+## 🔐 Emergency Governance Mechanisms
 
-### 긴급 정지 (Emergency Pause)
+### Emergency Pause
 
-**활성화 조건:**
-- 스마트 컨트랙트 취약점 발견
-- 대규모 해킹 시도 탐지
-- 극심한 시장 조작 의심
+**Activation Conditions:**
+- Smart contract vulnerability discovered
+- Large-scale hacking attempt detected
+- Suspected severe market manipulation
 
-**실행 권한:**
-- 5/7 멀티시그 서명 필요
-- 최대 72시간 동안 유효
-- DAO 투표로 연장 가능
+**Execution Authority:**
+- Requires 5/7 multi-sig signatures
+- Valid for maximum 72 hours
+- Extendable via DAO vote
 
-### 거버넌스 업그레이드 경로 (Governance Evolution)
+### Governance Evolution Roadmap
 
-**Phase 1 (현재): 하이브리드 거버넌스**
-- 팀이 기술적 결정 주도
-- 커뮤니티가 전략적 결정 주도
+**Phase 1 (Current): Hybrid Governance**
+- Team leads technical decisions
+- Community leads strategic decisions
 
-**Phase 2 (Year 2): 커뮤니티 주도**
-- 모든 중요 결정 DAO 투표
-- 팀은 기술 자문 역할
+**Phase 2 (Year 2): Community-Led**
+- All major decisions via DAO vote
+- Team serves as technical advisors
 
-**Phase 3 (Year 3+): 완전 탈중앙화**
-- 온체인 거버넌스 100%
-- 익명 제안자 지원
-- 위임 투표(Delegation) 도입
+**Phase 3 (Year 3+): Full Decentralization**
+- 100% on-chain governance
+- Anonymous proposer support
+- Delegation voting implementation
 
 ---
 
-## 🏆 거버넌스 인센티브 (Governance Incentives)
+## 🏆 Governance Incentives
 
-### 투표 참여 보상
+### Voting Participation Rewards
 
-**활동별 보상:**
+**Rewards by Activity:**
 
-| 활동 | 보상 (12C) | 조건 |
+| Activity | Reward (12C) | Conditions |
 |------|-----------|------|
-| **제안 제출** | 1,000 | 정족수 도달 시 |
-| **투표 참여** | 50 | 각 투표당 |
-| **토론 참여** | 10-100 | 품질 평가 기반 |
-| **위원회 활동** | 월 10,000 | 선출된 DAO 위원 |
+| **Submit Proposal** | 1,000 | If quorum reached |
+| **Vote Participation** | 50 | Per vote |
+| **Discussion Contribution** | 10-100 | Quality-based assessment |
+| **Council Member Activity** | 10,000 monthly | Elected DAO members |
 
-### DAO 위원 선출 (Council Election)
+### DAO Council Elections
 
-**선출 과정:**
-- 연 2회 선거 (6월, 12월)
-- 후보자 공약 발표 기간: 2주
-- 투표 기간: 1주
-- 상위 3명 당선
+**Election Process:**
+- Biannual elections (June, December)
+- Candidate platform announcement period: 2 weeks
+- Voting period: 1 week
+- Top 3 candidates elected
 
-**위원 역할:**
-- Treasury 멀티시그 서명자
-- 긴급 제안 우선 검토
-- 커뮤니티 대표 역할
+**Council Member Roles:**
+- Treasury multi-sig signer
+- Priority review of urgent proposals
+- Community representative duties
 
-**보상:**
-- 월 급여: 10,000 12C
-- 분기 성과금: 최대 30,000 12C
-- Genesis NFT 에어드랍
+**Compensation:**
+- Monthly salary: 10,000 12C
+- Quarterly performance bonus: up to 30,000 12C
+- Genesis NFT airdrops
 
 ---
 
-## 📋 거버넌스 로드맵 (Governance Roadmap)
+## 📋 Governance Roadmap
 
-| 시기 | 마일스톤 | 상태 |
+| Timeline | Milestone | Status |
 |------|----------|------|
-| **2025 Q2** | DAO 스마트 컨트랙트 배포 | ✅ |
-| **2025 Q3** | 첫 커뮤니티 제안 투표 | 🔄 진행 중 |
-| **2025 Q4** | DAO 위원 1기 선출 | 📅 예정 |
-| **2026 Q1** | 위임 투표 시스템 도입 | 📅 예정 |
-| **2026 Q2** | 크로스체인 거버넌스 확장 | 🔮 계획 |
+| **2025 Q2** | DAO smart contract deployment | ✅ |
+| **2025 Q3** | First community proposal vote | 🔄 In Progress |
+| **2025 Q4** | 1st Council election | 📅 Scheduled |
+| **2026 Q1** | Delegation voting system launch | 📅 Scheduled |
+| **2026 Q2** | Cross-chain governance expansion | 🔮 Planned |

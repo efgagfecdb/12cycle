@@ -114,4 +114,4 @@ This document is for informational purposes only and does not constitute investm
 
 **Last Updated:** December 2025  
 **Whitepaper Version:** 2.0  
-**Language:** English / 한국어
+**Language:** English

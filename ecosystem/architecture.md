@@ -22,23 +22,23 @@ We utilize a high-performance **Layer 2 Solution** (e.g., Polygon or Arbitrum) t
 
 ---
 
-## 🔗 블록체인 인프라 (Blockchain Infrastructure)
+## 🔗 Blockchain Infrastructure
 
-### 선택된 블록체인: Arbitrum One
+### Selected Blockchain: Arbitrum One
 
-**12cycle**은 **Arbitrum One**을 주요 블록체인 인프라로 채택합니다. Arbitrum은 Ethereum의 Layer 2 Optimistic Rollup 솔루션으로, 다음과 같은 기술적 이유로 선택되었습니다:
+**12cycle** adopts **Arbitrum One** as its primary blockchain infrastructure. Arbitrum is Ethereum's Layer 2 Optimistic Rollup solution, selected for the following technical reasons:
 
-#### 기술적 선택 이유
+#### Technical Selection Rationale
 
-| 항목 | 설명 |
-|------|------|
-| **저비용 트랜잭션** | Ethereum Mainnet 대비 90% 이상 낮은 가스비로 문화 활동 보상과 같은 소액 트랜잭션을 경제적으로 처리 가능 |
-| **높은 처리량** | 초당 4,000+ TPS를 지원하여 대규모 사용자 동시 접속 시에도 원활한 서비스 제공 |
-| **EVM 호환성** | Solidity 스마트 컨트랙트를 수정 없이 배포 가능하며, 기존 Ethereum 개발 도구 및 생태계 활용 가능 |
-| **보안성** | Ethereum Mainnet의 보안성을 상속받으며, Optimistic Rollup의 사기 증명(Fraud Proof) 메커니즘으로 추가 보안 보장 |
-| **확장성** | Nitro 업그레이드로 WASM 기반 실행 환경을 통해 지속적인 성능 향상 가능 |
+| Feature | Description |
+|---------|-------------|
+| **Low-Cost Transactions** | 90%+ lower gas fees compared to Ethereum Mainnet, enabling economical processing of micro-transactions such as cultural activity rewards |
+| **High Throughput** | Supports 4,000+ TPS, ensuring smooth service delivery even during large-scale concurrent user access |
+| **EVM Compatibility** | Allows deployment of Solidity smart contracts without modification, leveraging existing Ethereum development tools and ecosystem |
+| **Security** | Inherits Ethereum Mainnet's security while providing additional protection through Optimistic Rollup's Fraud Proof mechanism |
+| **Scalability** | Continuous performance improvements through Nitro upgrade with WASM-based execution environment |
 
-#### 네트워크 상세 정보
+#### Network Details
 
 ```
 Network Name: Arbitrum One
@@ -48,64 +48,64 @@ Block Explorer: https://arbiscan.io
 Bridge: https://bridge.arbitrum.io
 ```
 
-### 크로스체인 전략 (Cross-Chain Strategy)
+### Cross-Chain Strategy
 
-문화 콘텐츠의 글로벌 확산을 위해 다음과 같은 멀티체인 전략을 단계적으로 도입합니다:
+To facilitate global expansion of cultural content, we are implementing a phased multi-chain strategy:
 
-1. **Phase 1:** Arbitrum One 메인넷 배포 (현재)
-2. **Phase 2:** Polygon PoS 연동 (게임 및 NFT 확장)
-3. **Phase 3:** Base 네트워크 통합 (소셜 기능 강화)
-4. **Phase 4:** LayerZero 프로토콜 기반 옴니체인 구현
+1. **Phase 1:** Arbitrum One mainnet deployment (Current)
+2. **Phase 2:** Polygon PoS integration (Gaming and NFT expansion)
+3. **Phase 3:** Base network integration (Social features enhancement)
+4. **Phase 4:** Omnichain implementation via LayerZero protocol
 
 ---
 
-## ⚙️ PoC(Proof of Culture) 메커니즘 상세
+## ⚙️ PoC (Proof of Culture) Mechanism Details
 
-**Proof of Culture**는 사용자의 문화 활동을 블록체인 상에서 검증 가능한 증명으로 변환하는 12cycle의 핵심 메커니즘입니다.
+**Proof of Culture** is 12cycle's core mechanism that transforms users' cultural activities into blockchain-verifiable proofs.
 
-### 기술적 작동 원리
+### Technical Operation
 
-#### 1단계: 오프체인 활동 수집 (Off-Chain Activity Collection)
+#### Stage 1: Off-Chain Activity Collection
 
 ```
-사용자 활동 (웹툰 읽기, 게임 플레이, 팬아트 제작)
+User Activity (Reading webtoons, playing games, creating fan art)
     ↓
-12cycle SDK가 행동 데이터를 암호화하여 수집
+12cycle SDK encrypts and collects behavioral data
     ↓
-클라이언트 측 검증 (봇 방지 알고리즘)
+Client-side verification (Anti-bot algorithms)
     ↓
-활동 데이터를 해시값으로 변환
+Activity data converted to hash values
 ```
 
-**봇 방지 알고리즘:**
-- Captcha 인증 통합
-- 행동 패턴 분석 (마우스 움직임, 체류 시간)
+**Anti-Bot Algorithms:**
+- Captcha authentication integration
+- Behavioral pattern analysis (mouse movement, dwell time)
 - Device Fingerprinting
-- IP 기반 Sybil Attack 탐지
+- IP-based Sybil Attack detection
 
-#### 2단계: 오라클을 통한 온체인 전송 (Oracle Bridge)
+#### Stage 2: Oracle Bridge to On-Chain
 
-12cycle은 **Chainlink** 및 자체 **Validator Network**를 결합한 하이브리드 오라클 시스템을 운영합니다.
+12cycle operates a hybrid oracle system combining **Chainlink** and its own **Validator Network**.
 
 ```mermaid
 flowchart LR
-    A[앱 서버] -->|활동 데이터| B[Validator Pool]
-    B -->|검증 완료| C[Chainlink Oracle]
-    C -->|온체인 전송| D[Culture_Proof.sol]
-    D -->|PoC NFT 발행| E[사용자 지갑]
+    A[App Server] -->|Activity Data| B[Validator Pool]
+    B -->|Verification Complete| C[Chainlink Oracle]
+    C -->|On-Chain Transfer| D[Culture_Proof.sol]
+    D -->|PoC NFT Minting| E[User Wallet]
 ```
 
-**Validator Network 구성:**
-- 최소 7개 노드의 분산 검증자 네트워크
-- 다수결 합의(Majority Consensus) 메커니즘
-- 검증자는 12C 토큰을 스테이킹하여 신뢰성 담보
+**Validator Network Composition:**
+- Distributed validator network with minimum 7 nodes
+- Majority Consensus mechanism
+- Validators stake 12C tokens to ensure reliability
 
-#### 3단계: 스마트 컨트랙트 검증 (On-Chain Verification)
+#### Stage 3: Smart Contract Verification (On-Chain Verification)
 
-**Culture_Proof.sol** 컨트랙트가 다음 로직을 실행합니다:
+**Culture_Proof.sol** contract executes the following logic:
 
 ```solidity
-// 예시 코드 (단순화)
+// Example code (simplified)
 function mintCultureProof(
     address user,
     bytes32 activityHash,
@@ -121,180 +121,180 @@ function mintCultureProof(
 }
 ```
 
-**검증 기준:**
-- 중복 방지: 동일한 활동 해시는 한 번만 보상
-- 최소 점수: 각 활동 유형별 최소 참여 기준 설정
-- 시간 제한: 활동 발생 후 24시간 이내에만 청구 가능
+**Verification Criteria:**
+- Duplicate prevention: Same activity hash rewarded only once
+- Minimum score: Minimum participation threshold set for each activity type
+- Time limit: Claims must be made within 24 hours of activity occurrence
 
-#### 4단계: 보상 분배 (Reward Distribution)
+#### Stage 4: Reward Distribution
 
-검증된 PoC에 따라 12C 토큰이 자동으로 분배됩니다:
+12C tokens are automatically distributed based on verified PoC:
 
 ```
-활동 점수(S) × 활동 유형 가중치(W) × 글로벌 리워드 풀(P) = 보상(R)
+Activity Score(S) × Activity Type Weight(W) × Global Reward Pool(P) = Reward(R)
 
-예시:
-- 웹툰 1화 완독: S=100, W=1.0
-- 게임 데일리 미션: S=150, W=1.2
-- 팬아트 제작: S=500, W=2.0
+Examples:
+- Webtoon episode completion: S=100, W=1.0
+- Game daily mission: S=150, W=1.2
+- Fan art creation: S=500, W=2.0
 ```
 
-### PoC 기술 흐름도 (Technical Flow)
+### PoC Technical Flow
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                  사용자 활동 (User Activity)              │
-│         웹툰, 게임, NFT 거래, 커뮤니티 참여 등             │
+│                  User Activity                           │
+│    Webtoons, Games, NFT Trading, Community Participation    │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
 │              12cycle SDK (Client-side)                   │
-│  ✓ 활동 데이터 수집 및 암호화                              │
-│  ✓ 로컬 검증 (봇 방지)                                    │
-│  ✓ Merkle Proof 생성                                     │
+│  ✓ Activity data collection and encryption              │
+│  ✓ Local verification (Anti-bot)                        │
+│  ✓ Merkle Proof generation                             │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
 │           12cycle Validator Network                      │
-│  ✓ 7개 독립 노드의 다수결 검증                             │
-│  ✓ 활동 진위성 확인                                       │
-│  ✓ 스테이킹 기반 신뢰 시스템                               │
+│  ✓ Majority verification by 7 independent nodes        │
+│  ✓ Activity authenticity confirmation                  │
+│  ✓ Staking-based trust system                          │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
 │          Chainlink Oracle (Decentralized Bridge)         │
-│  ✓ 검증된 데이터를 온체인으로 전송                          │
-│  ✓ 크로스체인 데이터 통신                                  │
+│  ✓ Transfer verified data on-chain                      │
+│  ✓ Cross-chain data communication                       │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
 │      Smart Contract (Culture_Proof.sol)                  │
-│  ✓ 온체인 검증 로직 실행                                   │
-│  ✓ PoC NFT 발행                                          │
-│  ✓ 12C 토큰 보상 분배                                     │
+│  ✓ Execute on-chain verification logic                  │
+│  ✓ Mint PoC NFT                                         │
+│  ✓ Distribute 12C token rewards                         │
 └────────────────────┬────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
-│              User Wallet (최종 수령)                      │
-│  ✓ PoC NFT 저장                                          │
-│  ✓ 12C 토큰 수령                                         │
-│  ✓ 문화 기여도 기록 축적                                   │
+│              User Wallet (Final Receipt)                  │
+│  ✓ Store PoC NFT                                        │
+│  ✓ Receive 12C tokens                                   │
+│  ✓ Accumulate cultural contribution records            │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🚀 확장성 솔루션 (Scalability Solutions)
+## 🚀 Scalability Solutions
 
-문화 콘텐츠 플랫폼은 대규모 동시 사용자 트래픽을 처리해야 합니다. 12cycle은 다음과 같은 확장성 기술을 적용합니다:
+Cultural content platforms must handle large-scale concurrent user traffic. 12cycle applies the following scalability technologies:
 
-### 현재 적용 기술
+### Currently Implemented
 
 #### 1. Optimistic Rollup (Arbitrum Nitro)
 
-**작동 원리:**
-- 모든 트랜잭션은 기본적으로 유효하다고 가정(Optimistic)
-- 7일의 챌린지 기간 동안 사기 증명(Fraud Proof) 제출 가능
-- Ethereum Mainnet에 주기적으로 상태 루트(State Root) 제출
+**Operation:**
+- All transactions are assumed valid by default (Optimistic)
+- 7-day challenge period for Fraud Proof submission
+- Periodic State Root submission to Ethereum Mainnet
 
-**성능 지표:**
+**Performance Metrics:**
 - TPS: 4,000+
-- 최종성(Finality): 7일 (Fast Withdrawal은 수분)
-- 가스비 절감율: 95%
+- Finality: 7 days (Fast Withdrawal in minutes)
+- Gas fee reduction: 95%
 
-#### 2. 배치 처리 (Batch Processing)
+#### 2. Batch Processing
 
-소액 보상 트랜잭션을 묶어서 처리하여 효율성을 극대화합니다:
+Maximize efficiency by bundling small reward transactions:
 
 ```
-개별 트랜잭션 (비효율):
-User1 → 10 12C (Gas: 0.05$)
-User2 → 15 12C (Gas: 0.05$)
-User3 → 20 12C (Gas: 0.05$)
-총 가스비: 0.15$
+Individual Transactions (Inefficient):
+User1 → 10 12C (Gas: $0.05)
+User2 → 15 12C (Gas: $0.05)
+User3 → 20 12C (Gas: $0.05)
+Total Gas: $0.15
 
-배치 처리 (효율):
+Batch Processing (Efficient):
 Batch[User1, User2, User3] → [10, 15, 20] 12C
-총 가스비: 0.02$
+Total Gas: $0.02
 ```
 
-### 향후 적용 계획
+### Future Implementation
 
-#### 3. Zero-Knowledge Rollup (zkSync / StarkNet 통합)
+#### 3. Zero-Knowledge Rollup (zkSync / StarkNet Integration)
 
-**계획 시기:** 2026 Q3
+**Timeline:** 2026 Q3
 
-**기대 효과:**
-- 즉시 최종성(Instant Finality)
-- TPS 10,000+ 달성
-- 프라이버시 보호 기능 추가
+**Expected Benefits:**
+- Instant Finality
+- 10,000+ TPS achievement
+- Privacy protection features
 
-#### 4. Data Availability Layer (Celestia 통합)
+#### 4. Data Availability Layer (Celestia Integration)
 
-**계획 시기:** 2026 Q4
+**Timeline:** 2026 Q4
 
-**목적:**
-- 트랜잭션 데이터를 별도 레이어에 저장하여 비용 절감
-- Arbitrum의 DA 비용을 80% 추가 절감
+**Purpose:**
+- Cost reduction by storing transaction data on separate layer
+- Additional 80% reduction in Arbitrum DA costs
 
 #### 5. Application-Specific Sequencer
 
-**계획 시기:** 2027 Q1
+**Timeline:** 2027 Q1
 
-**구현 내용:**
-- 12cycle 전용 시퀀서 운영
-- 문화 활동 트랜잭션 우선 처리
-- MEV(Maximal Extractable Value) 방지
-
----
-
-## 🔐 보안 아키텍처 (Security Architecture)
-
-### 스마트 컨트랙트 보안
-
-**감사 계획:**
-- CertiK: 메인 토큰 컨트랙트 감사 (2025 Q2)
-- OpenZeppelin: PoC 메커니즘 감사 (2025 Q3)
-- Trail of Bits: 시스템 전체 보안 리뷰 (2025 Q4)
-
-**보안 모범 사례:**
-- OpenZeppelin 라이브러리 사용
-- Reentrancy Guard 적용
-- Access Control 명확화
-- Upgrade Proxy 패턴 (투명성 보장)
-
-### 인프라 보안
-
-- **API 보안:** Rate Limiting, API Key 암호화
-- **데이터베이스:** AES-256 암호화, 정기 백업
-- **서버:** AWS/GCP의 VPC 격리, DDoS 방어
-- **모니터링:** 24/7 이상 탐지 시스템
+**Implementation:**
+- Operate 12cycle-dedicated sequencer
+- Prioritize cultural activity transactions
+- Prevent MEV (Maximal Extractable Value)
 
 ---
 
-## 📊 성능 벤치마크 (Performance Benchmarks)
+## 🔐 Security Architecture
 
-### 현재 시스템 성능 (Testnet 기준)
+### Smart Contract Security
 
-| 지표 | 목표치 | 실제 달성치 |
-|------|--------|------------|
-| 트랜잭션 처리 속도 | 3,000 TPS | 3,850 TPS |
-| 평균 가스비 | < $0.01 | $0.008 |
-| PoC 검증 시간 | < 10초 | 8.5초 |
-| 컨트랙트 실행 시간 | < 2초 | 1.7초 |
+**Audit Schedule:**
+- CertiK: Main token contract audit (2025 Q2)
+- OpenZeppelin: PoC mechanism audit (2025 Q3)
+- Trail of Bits: Full system security review (2025 Q4)
 
-### 부하 테스트 결과
+**Security Best Practices:**
+- Use of OpenZeppelin libraries
+- Reentrancy Guard implementation
+- Clear Access Control
+- Upgrade Proxy pattern (transparency guaranteed)
 
-**시나리오:** 동시 10,000명 사용자 PoC 클레임
+### Infrastructure Security
+
+- **API Security:** Rate Limiting, API Key encryption
+- **Database:** AES-256 encryption, regular backups
+- **Servers:** AWS/GCP VPC isolation, DDoS protection
+- **Monitoring:** 24/7 anomaly detection system
+
+---
+
+## 📊 Performance Benchmarks
+
+### Current System Performance (Testnet Basis)
+
+| Metric | Target | Achieved |
+|--------|--------|----------|
+| Transaction Processing Speed | 3,000 TPS | 3,850 TPS |
+| Average Gas Fee | < $0.01 | $0.008 |
+| PoC Verification Time | < 10s | 8.5s |
+| Contract Execution Time | < 2s | 1.7s |
+
+### Load Test Results
+
+**Scenario:** Simultaneous 10,000 users PoC claiming
 
 ```
-Phase 1: 0-5분 → 2,000 TPS 유지
-Phase 2: 5-10분 → 3,500 TPS 달성
-Phase 3: 10-15분 → 시스템 안정성 유지
-결과: 전체 트랜잭션 성공률 99.7%
+Phase 1: 0-5min → Maintain 2,000 TPS
+Phase 2: 5-10min → Achieve 3,500 TPS
+Phase 3: 10-15min → Maintain system stability
+Result: Overall transaction success rate 99.7%
 ```
