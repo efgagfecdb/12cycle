@@ -16,4 +16,9 @@
 ## 🗺️ Roadmap
 * [Development Plan](roadmap/roadmap.md)
 
-## ...
+## ⚖️ Legal
+* [Legal Disclaimer](legal/disclaimer.md)
+* [Risk Factors](legal/risks.md)
+
+## 👥 Team
+* [Team & Partnership](team/team.md)
